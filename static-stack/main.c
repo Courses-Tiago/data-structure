@@ -8,6 +8,6 @@ int main(void) {
     push(stack, 88);
     push(stack, 34);
     print_stack(stack);
-    free_stack(stack);
+    free_stack(&stack);
     return EXIT_SUCCESS;
 }

@@ -54,8 +54,8 @@ void print_stack(const stack_t *stack);
 /**
  * @brief Deallocates stack's memory.
  * 
- * @param stack Object to deallocate heap memory.
+ * @param stack Double pointer to deallocate heap memory.
  */
-void free_stack(stack_t *stack);
+void free_stack(stack_t **stack);
 
 #endif

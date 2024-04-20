@@ -49,7 +49,7 @@ void push(stack_t *stack, int data) {
     if(is_full(stack)) {
         fprintf(stderr, "ERROR in 'push'\n");
         fprintf(stderr, "Stack is Full!\n");
-        free_stack(stack);
+        free_stack(&stack);
         exit(EXIT_FAILURE);
     }
     stack->top++;
@@ -60,7 +60,7 @@ void pop(stack_t *stack) {
     if(is_empty(stack)) {
         fprintf(stderr, "ERROR in 'pop'\n");
         fprintf(stderr, "Stack is Empty!\n");
-        free_stack(stack);
+        free_stack(&stack);
         exit(EXIT_FAILURE);
     }
     printf("Removed value: %d\n", stack->data[stack->top]);
@@ -77,9 +77,9 @@ void print_stack(const stack_t *stack) {
     }
 }
 
-void free_stack(stack_t *stack) {
-    free(stack->data);
-    stack->data = NULL;
-    free(stack);
-    stack = NULL;
+void free_stack(stack_t **stack) {
+    free((*stack)->data);
+    (*stack)->data = NULL;
+    free(*stack);
+    *stack = NULL;
 }
