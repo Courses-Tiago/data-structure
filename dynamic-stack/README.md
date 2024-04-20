@@ -5,4 +5,4 @@
 `$ cmake -S . -B build/`\
 `$ cd build/`\
 `$ make`\
-`$ ./stack`\
+`$ ./stack`
